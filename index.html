@@ -1,26 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html>
 <head>
 <meta charset="utf-8">
     <title>Windows 7</title>
     
     <link href="css/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css"/>
     <link href="css/AeroWindow.css" rel="stylesheet" type="text/css"/>
-    
-    <style type="text/css">
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-      body {
-        background: url(win7-desktop-bg.jpg);
-        font-family: arial;
-        overflow: hidden;
-      }
-    </style>
-  </head>
-  <body>
 
+  </head>
+
+  <body>
+    <style>
+      @media screen {
+
+        *{
+          margin: 0px;
+          padding: 0px;
+        }
+        body {
+          background: url(win7-desktop-bg.jpg);
+          font-family: arial;
+          overflow: hidden;
+        }
+      }
+      @media print {
+        #Taskbar{display: none;}
+        #Start-Menu{display: none;}
+        #DesktopIcons{display: none;}
+        .AeroWindowContainer{display: none;}
+        .AeroWindow{display: none;}
+        .active{display: none;}      
+        .title{display: none;}    
+        .buttons{display: none;}    
+      }
+
+
+    </style>
     <!-- 
     ###########################################################################
     Begin: HTML Content Container for Aero Windows ############################
@@ -29,7 +44,8 @@
     <div id="DesktopIcons">
       <ul style="display: none">
 
-        <li><a href="http://localhost/google/weblife/index.html"><img src="images/icons/Nomina.png" alt="icono" />Nomina 2014</a></li>
+        <li><a href="http://localhost/proyecto_billar/public_html/index.html"><img src="../proyecto_billar/public_html/bola8.png" alt="icono" />Billar </a></li>
+        <li><a href="http://localhost/proyecto_parqueadero/public_html/index.html"><img src="../proyecto_parqueadero/public_html/parqueadero.png" alt="icono" />Parqueadero </a></li>
 
       </ul>  
     </div>
@@ -38,26 +54,36 @@
     End: HTML Content Container for Aero Windows ##############################
     ########################################################################### 
     -->  
- 
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
+
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
     <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script> 
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>        
     <script type="text/javascript" src="js/jquery-AeroWindow.min.js"></script>
     <script type="text/javascript">
-    var ShowTaskbar = true;
-    $(document).ready(function() {
-      //Initialize Desktop Icons ----------------------------------------------
-      var desktop = $("body #DesktopIcons");
-      var desktop_icons = $("a", desktop);
-      $("ul", desktop).css("display", "none");
+      var ShowTaskbar = true;
+      $(document).ready(function () {
+        //Initialize Desktop Icons ----------------------------------------------
+        var desktop = $("body #DesktopIcons");
+        var desktop_icons = $("a", desktop);
+        $("ul", desktop).css("display", "none");
 
-      desktop_icons.each(function(index) {
-        
-        if ($(this).attr('href') !== 'undefined')
-          $(this).AeroWindowLink();
+        desktop_icons.each(function (index) {
+
+          if ($(this).attr('href') !== 'undefined')
+            $(this).AeroWindowLink();
+        });
+        desktop_icons.remove();
       });
-      desktop_icons.remove();
-    });
     </script>
-</body>
+
+    <script>
+//        setTimeout ('imprimir()', 5000); 
+      function imprimir_frame(id) {
+        console.info('imprimir: ' + id);
+        //   $('#'+id).printElement();         
+        window.frames[id].print();
+
+      }
+    </script>
+  </body>
 </html>
