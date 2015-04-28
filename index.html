@@ -29,7 +29,8 @@
     <div id="DesktopIcons">
       <ul style="display: none">
 
-        <li><a href="http://localhost/google/weblife/index.html"><img src="images/icons/Nomina.png" alt="icono" />Nomina 2014</a></li>
+        <li><a href="http://localhost/billar/index.html"><img src="images/icons/Nomina.png" alt="icono" />Nomina 2014</a></li>
+        <li><a href="http://localhost/encuesta/index.html"><img src="images/icons/Nomina.png" alt="icono" />Nomina 2014</a></li>
 
       </ul>  
     </div>
@@ -58,6 +59,11 @@
       });
       desktop_icons.remove();
     });
+    
+    function imprimir_frame(id){
+console.log(id);        
+window.frames[id].print();        
+    }
     </script>
 </body>
 </html>

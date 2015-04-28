@@ -220,6 +220,13 @@ Buttons Regular Window
   display: block;
   background: url(../images/WindowsAeroStyle/btn-close.png);
 }  
+.AeroWindow .buttons .win-printer-btn {
+  width: 26px;
+  height: 19px;
+  float: left;
+  display: block;
+  background: url(../images/WindowsAeroStyle/printer.png);
+}  
 .AeroWindow .buttons .win-btn-leftedge {
   width: 2px;
   height: 19px;
