@@ -221,7 +221,11 @@ Buttons Regular Window
   background: url(../images/WindowsAeroStyle/btn-close.png);
 }  
 .AeroWindow .buttons .win-printer-btn {
+<<<<<<< HEAD
   width: 22px;
+=======
+  width: 26px;
+>>>>>>> origin/master
   height: 19px;
   float: left;
   display: block;
